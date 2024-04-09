@@ -1,6 +1,6 @@
 
 
-# TMDB TypeScript NPM package or NextJS and React typescript applications
+# TMDB TypeScript NPM package and NodeJS wrapper for NextJS and React typescript applications
 
 TMDB TypeScript API is a Node.js wrapper and package that provides a TypeScript-friendly interface for interacting with The Movie Database (TMDB) API. It simplifies the process of making requests to TMDB API endpoints and handling responses, allowing you to quickly integrate TMDB data into your TypeScript projects.
 
@@ -60,6 +60,54 @@ const popularMovies = await tmdbApi.getPopularMovies();
     getMovieCredits(movieId: string): Promise<any>: Gets credits for a specific movie identified by its TMDB ID.
     getMovieRecommendations(movieId: string): Promise<any>: Gets recommendations for a specific movie identified by its TMDB ID.
     getPopularMovies(): Promise<any>: Gets a list of popular movies.
+
+```
+
+# THIS IS AN EXAMPLE OF ITS USE CASE.
+## NOTE: THIS PACKAGE IS YET TO BE PUBLISHED. CLONE THE REPOSITORY AND FIND ITS USE CASE IN YOUR OWN NEXTJS/REACT TYPESCRIPT APPLICATION
+
+```bash
+import { useEffect, useState } from 'react';
+import TMDBAPI from 'tmdb-api';
+
+const apiKey = 'YOUR_TMDB_API_KEY'; // Replace with your actual TMDB API key
+
+interface Movie {
+  id: number;
+  title: string;
+}
+
+export default function Home(): JSX.Element {
+  const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
+
+  useEffect(() => {
+    const fetchPopularMovies = async () => {
+      try {
+        // Create an instance of TMDBAPI with your API key
+        const tmdbApi = new TMDBAPI(apiKey);
+  
+        // Fetch popular movies
+        const data = await tmdbApi.getPopularMovies();
+        setPopularMovies(data.results);
+      } catch (error) {
+        console.error('Error fetching popular movies:', error);
+      }
+    };
+
+    fetchPopularMovies();
+  }, []);
+
+  return (
+    <div>
+      <h1>Popular Movies</h1>
+      <ul>
+        {popularMovies.map((movie) => (
+          <li key={movie.id}>{movie.title}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 ```
 
