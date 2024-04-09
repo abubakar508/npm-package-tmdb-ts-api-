@@ -17,6 +17,7 @@
     "typescript": "^5.4.4"
   },
   "dependencies": {
+    "morgan": "^1.10.0",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.0"
   }

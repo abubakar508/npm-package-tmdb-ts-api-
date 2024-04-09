@@ -4,12 +4,12 @@ import fetch from "node-fetch";
 class TMDBAPI {
     apiKey: any;
     baseUrl: string;
-    constructor(apiKey: any) {
+    constructor(apiKey: string) {
         if (!apiKey) {
             throw new Error("TMDB API is required");
         }
         this.apiKey = apiKey;
-        this.baseUrl = 'https://api.themoviedb.org/3/';
+        this.baseUrl = "https://api.themoviedb.org/3/";
         
     }
 
