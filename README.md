@@ -12,3 +12,7 @@ npm install tmdb-ts-api
 # or
 
 yarn add tmdb-ts-api
+
+bash```
+
+## Usage
