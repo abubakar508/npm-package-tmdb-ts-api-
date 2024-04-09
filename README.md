@@ -9,11 +9,11 @@ TMDB TypeScript API is a Node.js wrapper and package that provides a TypeScript-
 You can install TMDB TypeScript API via npm or yarn:
 
 ```bash
-npm install tmdb-ts-api
+npm install ts-tmdb
 
 # or
 
-yarn add tmdb-ts-api
+yarn add ts-tmdb
 ```
 
 
@@ -24,7 +24,7 @@ To use TMDB TypeScript API in your TypeScript project, first import the TMDBAPI 
 This should be in a .ts file.
 
 ```bash
-import TMDBAPI from 'tmdb-ts-api';
+import TMDBAPI from 'ts-tmdb';
 
 const apiKey = 'YOUR_TMDB_API_KEY';
 const tmdbApi = new TMDBAPI(apiKey);
@@ -64,12 +64,12 @@ const popularMovies = await tmdbApi.getPopularMovies();
 ```
 
 # THIS IS AN EXAMPLE OF ITS USE CASE.
-## NOTE: THIS PACKAGE IS YET TO BE PUBLISHED. CLONE THE REPOSITORY AND FIND ITS USE CASE IN YOUR OWN NEXTJS/REACT TYPESCRIPT APPLICATION
+## CHECH THE LINK TO THE NPM REGISTRY ON THE REPO DESCRIPTION
 
 ```bash
 "use client";
 import { useEffect, useState } from 'react';
-import TMDBAPI from 'tmdb-ts-api';
+import TMDBAPI from 'ts-tmdb';
 
 const apiKey = 'YOUR_TMDB_API_KEY'; // Replace with your actual TMDB API key(Keep API key safe by creating an environment file.).
 
