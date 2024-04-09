@@ -67,10 +67,13 @@ const popularMovies = await tmdbApi.getPopularMovies();
 ## NOTE: THIS PACKAGE IS YET TO BE PUBLISHED. CLONE THE REPOSITORY AND FIND ITS USE CASE IN YOUR OWN NEXTJS/REACT TYPESCRIPT APPLICATION
 
 ```bash
+"use client";
 import { useEffect, useState } from 'react';
-import TMDBAPI from 'tmdb-api';
+import TMDBAPI from 'tmdb-ts-api';
 
-const apiKey = 'YOUR_TMDB_API_KEY'; // Replace with your actual TMDB API key
+const apiKey = 'YOUR_TMDB_API_KEY'; // Replace with your actual TMDB API key(Keep API key safe by creating an environment file.).
+
+// process.env.TMDB_API_KEY (replace YOUR_TMDB_API_KEY with this)
 
 interface Movie {
   id: number;
@@ -78,6 +81,9 @@ interface Movie {
 }
 
 export default function Home(): JSX.Element {
+
+//set the usestate of the popular movies
+
   const [popularMovies, setPopularMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
